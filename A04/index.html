@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A04</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #04272D, #33595E);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            backdrop-filter: blur(50px);
+        }
+
+        .container-fluid {
+            padding: 25px 30px;
+        }
+
+        h2 {
+            font-style: italic;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fdf1dd;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card-img {
+            border-radius: 15px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .btn-custom {
+            font-size: 1rem;
+            font-weight: 400;
+            text-decoration: none;
+            color: #fdf1dd;
+            padding: 15px 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            
+        }
+
+        .btn-custom:hover {
+            background-color: #41787f;
+            color: #fff;
+        }
+
+        @media (max-width: 992px) {
+            h2 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            p {
+                font-size: 1rem;
+                text-align: center;
+            }
+
+            .col-md-4.text-end {
+                text-align: center !important;
+            }
+
+            .container-fluid {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .row.justify-content-center.align-items-center {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .col-3,
+            .col-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .col-3 .row,
+            .col-6 .row {
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+
+            .card {
+                margin-bottom: 15px;
+            }
+
+            .col-3,
+            .col-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="btn-custom">Home
+        </a>
+    </nav>
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-md-4 text-end" style="color: #fdf1dd;">
+                <h2>Capture. Create. Connect — at 5G speed.</h2>
+                <p>
+                    The Tecno Camon 30 Pro 5G is designed for creators and trendsetters, featuring a powerful 50MP
+                    camera,
+                    lightning-fast 5G connectivity, and a stunning AMOLED display. Experience flagship performance with
+                    a
+                    high-speed processor, smooth 120Hz refresh rate, and a long-lasting battery equipped with fast
+                    charging.
+                    Ideal for high-quality content creation, immersive gaming, and all-day use — all wrapped in a
+                    stylish,
+                    premium design that stands out.
+                </p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="card">
+                    <img src="Tecno Camon.jpg" class="card-img img-fluid" alt="Tecno Camon 30 Pro 5G">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow my-1">
+                            <img src="imx.jpg" class="card-img img-fluid" alt="imx">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card my-1">
+                            <img src="mediatech.jpg" class="card-img img-fluid" alt="media">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow my-2">
+                            <img src="dark.jpg" class="card-img img-fluid" alt="dark">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow my-2">
+                            <img src="144hz.jpg" class="card-img img-fluid" alt="144hz">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow my-3">
+                            <img src="dolby.jpg" class="card-img img-fluid" alt="dolby">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow my-1">
+                            <img src="camon30.jpg" class="card-img img-fluid" alt="camon30">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow my-1">
+                            <img src="tecnopic.jpg" class="card-img img-fluid" alt="tecnopic">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow my-1" style="max-height: 340px;">
+                            <img src="camera.jpg" class="card-img img-fluid" alt="camera">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
