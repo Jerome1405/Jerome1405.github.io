@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jerome Medrano</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #04272D, #33595E);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            backdrop-filter: blur(50px);
+            padding-top: 80px;
+        }
+
+        .btn-custom {
+            font-size: 1rem;
+            font-weight: 400;
+            background-color: #33595E;
+            text-decoration: none;
+            color: #fdf1dd;
+            padding: 15px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #41787f;
+            color: #fff;
+        }
+
+        .btn-disabled {
+            background-color: #6c757d;
+            color: #fdf1dd;
+            cursor: not-allowed;
+        }
+
+        .btn-disabled:hover {
+            background-color: #6c757d;
+            color: #fdf1dd;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .profile-header img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 4px solid #fdf1dd;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-header img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-header .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .profile-header .name {
+            font-size: 2.5rem;
+            color: #fdf1dd;
+        }
+
+        .profile-header .subtitle {
+            font-size: 1.25rem;
+            color: #fdf1dd;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+        }
+
+        .links a {
+            color: #fdf1dd;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #41787f;
+        }
+
+        .links a i {
+            margin-right: 8px;
+            font-size: 1.5rem;
+        }
+
+        .projects-container {
+            margin-top: 80px;
+        }
+
+        .card {
+            background-color: #04272D;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-body {
+            color: #fdf1dd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-header">
+        <img src="img/Mypic.jpg" alt="My Picture" class="img-fluid">
+        <div class="info">
+            <div class="name">Jerome Medrano</div>
+            <div class="subtitle"><em>Diploma in Information Technology - 2 year</em></div>
+            <div class="links">
+                <a href="https://www.facebook.com/share/1Di6h98sZe/" target="_blank">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="https://github.com/Jerome1405/Jerome1405.github.io.git" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container projects-container">
+        <div class="h1 display" style="color: #fdf1dd">Projects</div>
+
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Activity 4</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">Tecno Camon 30 Pro 5G</h6>
+                            <div class="card my-1">
+                                <img src="img/Tecno Camon.jpg" class="card-img img-fluid" alt="Tecno Camon 30 Pro 5G">
+                            </div>
+                            <a href="A04/index.html" class="btn-custom">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+                            <p class="card-text"></p>
+                            <a href="#" class="btn-custom btn-disabled" disabled>Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+                            <p class="card-text"></p>
+                            <a href="#" class="btn-custom btn-disabled" disabled>Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
