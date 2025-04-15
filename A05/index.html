@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A05</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-radius: 25px;
+            border: 3px solid #fff;
+        }
+
+        .text-container {
+            padding-left: 20px;
+        }
+
+        .img-container img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img/barcelona.jpg') no-repeat center center/cover;
+            filter: blur(2px);
+            z-index: -1;
+        }
+
+        .navbar {
+            background: transparent;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar-brand {
+            font-size: 2rem;
+            margin-left: 0;
+        }
+
+        .navbar a {
+            color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+            margin-right: 1rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ffd700;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .content h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .content p {
+            font-size: 1.5rem;
+            color: #fff3e0;
+            max-width: 700px;
+        }
+
+        .section {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(2px);
+            color: white;
+            text-align: center;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .section p {
+            max-width: 600px;
+            margin: auto;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .card {
+            background-color: #fff3e0;
+            border: 2px solid black;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            height: 100%;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card img {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .card-body h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-body p {
+            font-size: 1rem;
+            color: black;
+        }
+
+        .col-md-4.position-relative {
+            display: flex;
+            justify-content: center;
+        }
+
+        .col-md-4.position-relative {
+            position: relative;
+            z-index: 1;
+        }
+
+        .position-absolute.bottom-0.start-0.w-100.text-center.text-white.p-3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            font-weight: bold;
+            z-index: 10;
+            padding: 0.5rem;
+        }
+
+        .text-white {
+            margin-top: 20px;
+            font-size: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .carousel-caption-container {
+            margin-top: 15px;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        @media (max-width: 767px) {
+            .content h1 {
+                font-size: 2.5rem;
+            }
+
+            .content p {
+                font-size: 1.2rem;
+            }
+
+            .card-body h3 {
+                font-size: 1.2rem;
+            }
+
+            .card-body p {
+                font-size: 0.9rem;
+            }
+
+            .img-container img {
+                border-radius: 15px;
+            }
+
+            .text-container {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .content {
+                padding-top: 40px;
+                height: auto;
+            }
+
+            .col-md-5 {
+                flex-basis: 100%;
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .col-md-5 img {
+                max-width: 90%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <nav class="navbar d-flex justify-content-between align-items-center">
+        <div>
+            <a href="../index.html" class="btn-custom">Home</a>
+            <a href="#explore" class="btn-custom">Explore</a>
+            <a href="#contact" class="btn-custom">Contact</a>
+        </div>
+    </nav>
+    <div class="container-fluid content">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-5 d-flex justify-content-center">
+                <div class="img-container">
+                    <img src="img/barcelona2.jpg" class="img-fluid custom-img" alt="barcelona2">
+                </div>
+            </div>
+            <div class="col-md-5 d-flex flex-column align-items-end">
+                <div class="text-container text-start">
+                    <h1>Welcome to Barcelona</h1>
+                    <p>
+                        Barcelona, the cosmopolitan capital of Spain’s Catalonia region, is known for its art and
+                        architecture. The fantastical Sagrada Família church and other modernist landmarks designed by
+                        Antoni Gaudí dot the city. Museu Picasso and Fundació Joan Miró feature modern art by their
+                        namesakes. City history museum MUHBA includes several Roman archaeological sites.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="explore" class="section">
+        <h2>Explore the City</h2>
+        <p>Discover the beauty, history, and passion of this amazing city. Barcelona is full of vibrant culture,
+            stunning architecture, and delicious cuisine.</p>
+        <div class="container mt-5">
+            <div class="row g-4">
+                <div class="col-md-4 position-relative">
+                    <div class="card">
+                        <div id="sagradaCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/Sagrada Familia.jpg" class="img-fluid rounded"
+                                        alt="Sagrada Familia 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/Sagrada Familia2.jpg" class="img-fluid rounded"
+                                        alt="Sagrada Familia 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/Sagrada Familia3.jpg" class="img-fluid rounded"
+                                        alt="Sagrada Familia 3">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/Sagrada Familia4.jpg" class="img-fluid rounded"
+                                        alt="Sagrada Familia 4">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#sagradaCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#sagradaCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Sagrada Familia</h3>
+                            <p class="card-text">Iconic cathedral under construction, showcasing breathtaking stained
+                                glass windows and intricate architecture. Features include audio guides, tower access
+                                for panoramic views, and a rich history.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative">
+                    <div class="card">
+                        <div id="gothicQuarterCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/gothic quarter.jpg" class="img-fluid rounded" alt="Gothic Quarter 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/gothic quarter2.jpg" class="img-fluid rounded" alt="Gothic Quarter 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/gothic quarter3.jpg" class="img-fluid rounded" alt="Gothic Quarter 3">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/gothic quarter4.jpg" class="img-fluid rounded" alt="Gothic Quarter 4">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#gothicQuarterCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#gothicQuarterCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Gothic Quarter</h3>
+                            <p class="card-text">Historic neighborhood with a labyrinth of narrow streets, home to
+                                impressive architecture like the local cathedral and the Pont del Bisbe, filled with
+                                quaint shops and cafes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative">
+                    <div class="card">
+                        <div id="casaBatlloCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/casa battlo.jpg" class="img-fluid rounded" alt="Casa Batlló">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/casa battlo2.jpg" class="img-fluid rounded" alt="Casa Batlló">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/casa battlo3.jpg" class="img-fluid rounded" alt="Casa Batlló">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/casa battlo4.jpg" class="img-fluid rounded" alt="Casa Batlló">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#casaBatlloCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#casaBatlloCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Casa Batlló</h3>
+                            <p class="card-text">Modernist architecture gem with whimsical design, featuring unique
+                                lighting effects and an augmented reality tour. Includes audio guide for historical
+                                insight.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative">
+                    <div class="card">
+                        <div id="parkGuellCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/park guell.jpg" class="img-fluid rounded" alt="Park Güell">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/park guell2.jpg" class="img-fluid rounded" alt="Park Güell">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/park guell3.jpg" class="img-fluid rounded" alt="Park Güell">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/park guell4.jpg" class="img-fluid rounded" alt="Park Güell">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#parkGuellCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#parkGuellCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Park Güell</h3>
+                            <p class="card-text">Mosaic-adorned park on a hill featuring unique architecture and nature.
+                                Ideal for fans of whimsical design and historical narratives, with a serene ambiance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative">
+                    <div class="card">
+                        <div id="mercatdelaBoqueriaCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/mercat de la boqueria.jpg" class="img-fluid rounded"
+                                        alt="Mercat de la Boqueria">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/mercat de la boqueria2.jpg" class="img-fluid rounded"
+                                        alt="Mercat de la Boqueria">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/mercat de la boqueria3.jpg" class="img-fluid rounded"
+                                        alt="Mercat de la Boqueria">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/mercat de la boqueria4.jpg" class="img-fluid rounded"
+                                        alt="Mercat de la Boqueria">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#mercatdelaBoqueriaCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#mercatdelaBoqueriaCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Mercat de la Boqueria</h3>
+                            <p class="card-text">Officially known as the Mercat de San Josep as it was built on a former
+                                monastery, La Boqueria is a popular food market along Barcelona's touristy La Rambla
+                                stretch.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative">
+                    <div class="card">
+                        <div id="palaceofcatalanMusicCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/place of catalan.jpg" class="img-fluid rounded"
+                                        alt="Palace of Catalan Music">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/place of catalan2.jpg" class="img-fluid rounded"
+                                        alt="Palace of Catalan Music">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/place of catalan3.jpg" class="img-fluid rounded"
+                                        alt="Palace of Catalan Music">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/place of catalan4.jpg" class="img-fluid rounded"
+                                        alt="Palace of Catalan Music">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#palaceofcatalanMusicCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#palaceofcatalanMusicCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Palace of Catalan Music</h3>
+                            <p class="card-text">Art Nouveau concert hall with intricate mosaics, stained glass, and a
+                                remarkable skylight. Hosts music performances and art exhibits, recognized as a UNESCO
+                                World Heritage Site.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Want to know more about visiting Barcelona? Reach out and we'll help you plan the perfect trip!
+        </p>
+    </div>
+
+    <footer>
+        © 2025 Barcelona Tours. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
