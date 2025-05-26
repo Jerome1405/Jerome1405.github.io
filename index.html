@@ -1,63 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jerome Medrano</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
     <style>
         body {
-            background: linear-gradient(to bottom, #04272D, #33595E);
+            font-family: 'Press Start 2P', cursive;
+            background: url('img/minecraftbg.gif') no-repeat center center fixed;
+            background-size: cover;
             min-height: 100vh;
             margin: 0;
             padding: 0;
-            backdrop-filter: blur(50px);
-            padding-top: 80px;
-        }
-
-        .btn-custom {
-            font-size: 1rem;
-            font-weight: 400;
-            background-color: #33595E;
-            text-decoration: none;
-            color: #fdf1dd;
-            padding: 15px 20px;
-            border-radius: 25px;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-custom:hover {
-            background-color: #41787f;
-            color: #fff;
-        }
-
-        .btn-disabled {
-            background-color: #6c757d;
-            color: #fdf1dd;
-            cursor: not-allowed;
-        }
-
-        .btn-disabled:hover {
-            background-color: #6c757d;
-            color: #fdf1dd;
+            overflow-x: hidden;
         }
 
         .profile-header {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
-            justify-content: flex-start;
-            margin-left: 20px;
+            padding: 10px;
+            border-radius: 8px;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .profile-header img {
             width: 180px;
             height: 180px;
+            align-content: center;
             object-fit: cover;
             border-radius: 50%;
             margin-right: 20px;
@@ -74,80 +53,155 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .profile-header .name,
+        .profile-header .subtitle {
+            color: #fdf1dd;
+            font-family: 'Press Start 2P', cursive;
+            text-shadow:
+                2px 2px 0 #000,
+                4px 4px 0 #555;
+            letter-spacing: 1px;
         }
 
         .profile-header .name {
             font-size: 2.5rem;
-            color: #fdf1dd;
+            line-height: 1.2;
         }
 
         .profile-header .subtitle {
             font-size: 1.25rem;
-            color: #fdf1dd;
+            font-style: normal;
             margin-top: 5px;
-            font-style: italic;
         }
 
-        .links {
-            display: flex;
-            flex-direction: row;
-            margin-top: 10px;
-        }
-
-        .links a {
+        .profile-header .links a {
+            display: inline-block;
+            margin-right: 15px;
             color: #fdf1dd;
             text-decoration: none;
-            margin-right: 20px;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
+        }
+
+        .profile-header .links a i {
+            border: none;
+        }
+
+
+        .profile-header .links a:hover {
+            color: #000;
+        }
+
+        .mc-button {
+            display: inline-block;
+            min-width: 140px;
+            padding: 10px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #c6c6c6, #8b8b8b);
+            border: 4px solid #000;
+            color: #000;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: inset -2px -2px 0 #fff, inset 2px 2px 0 #555;
+            transition: background 0.2s ease;
+            user-select: none;
+            border-radius: 8px;
+        }
+
+        .mc-button:hover {
+            background: linear-gradient(to bottom, #d6d6d6, #9b9b9b);
+        }
+
+        .mc-button:active {
+            background: linear-gradient(to bottom, #8b8b8b, #c6c6c6);
+        }
+
+        .minecraft-text-shadow {
+            text-shadow:
+                1px 1px 0 #3a2f2b,
+                2px 2px 0 #3a2f2b,
+                3px 3px 0 #3a2f2b;
+        }
+
+        a.minecraft-text-shadow:hover {
+            background-color: #6b5a56;
+            cursor: pointer;
+            box-shadow:
+                inset 2px 2px 5px #2e251f,
+                inset -2px -2px 5px #c0b1a9;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-custom {
+            display: inline-block;
+            padding: 8px 14px;
+            background-color: #6b5a56;
+            color: #fdf1dd;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            box-shadow: inset 2px 2px 5px #c0b1a9, inset -2px -2px 5px #2e251f;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #8b7a76;
+            box-shadow: inset 2px 2px 8px #d1c0be, inset -2px -2px 8px #3f332f;
+        }
+
+        .btn-disabled {
+            background-color: #999;
+            color: #666;
+            cursor: not-allowed;
+            box-shadow: none;
+            pointer-events: none;
+            text-decoration: none;
+        }
+
+        .project-card-body {
             display: flex;
             align-items: center;
-            transition: color 0.3s ease;
+            gap: 15px;
+            height: 100%;
         }
 
-        .links a:hover {
-            color: #41787f;
+        .project-card-body img.project-chest {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            border: 2px solid #fdf1dd;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
 
-        .links a i {
-            margin-right: 8px;
-            font-size: 1.5rem;
+        .project-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
 
-        .projects-container {
-            margin-top: 80px;
-        }
-
-        .card {
-            background-color: #04272D;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .card-body {
-            color: #fdf1dd;
-        }
-
-        .card-img {
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .text-body-secondary {
-            color: #fdf1dd !important;
+        .minecraft-border {
+            border: 2px solid #3a2f2b;
+            background-color: #8e7f7b;
+            box-shadow:
+                1px 1px 0 #3a2f2b,
+                2px 2px 0 #3a2f2b,
+                3px 3px 0 #3a2f2b;
+            border-radius: 8px;
         }
     </style>
 </head>
 
 <body>
-
     <div class="profile-header">
-        <img src="img/Mypic.jpg" alt="My Picture" class="img-fluid">
+        <img src="img/Mypic.jpg" alt="My Picture" class="img-fluid" />
         <div class="info">
             <div class="name">Jerome Medrano</div>
             <div class="subtitle"><em>Diploma in Information Technology - 2 year</em></div>
@@ -162,105 +216,120 @@
         </div>
     </div>
 
-    <div class="container projects-container">
-        <div class="h1 display" style="color: #fdf1dd">Projects</div>
+    <div class="main-content flex flex-col items-center justify-center min-h-screen px-4 text-center">
+        <img src="img/steve1_transparent.gif" alt="Spinning Steve"
+            style="width:400px; height:auto; margin-bottom: 10px;">
 
-        <div class="container mt-4">
+        <p class="minecraft-text-shadow text-white text-4xl select-none mt-2 mb-2">
+            Welcome to my world!!!
+        </p>
+
+        <div id="viewProjectsBtn" class="mc-button select-none" style="width: auto; padding: 15px 25px;">
+            View Projects
+        </div>
+
+        <div id="projectsContainer" class="container mt-4" style="display: none;">
             <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-3 h-100">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Activity 4</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Tecno Camon 30 Pro 5G</h6>
-                            <div class="card my-1">
-                                <img src="img/Tecno Camon.jpg" class="card-img img-fluid" alt="Tecno Camon 30 Pro 5G">
-                            </div>
-                            <div class="mt-auto">
-                                <a href="A04/index.html" class="btn-custom">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-4 mb-3 h-100">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Activity 5</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Barcelona - Spain</h6>
-                            <div class="card my-1">
-                                <img src="A05/img/barcelona1.jpg" class="card-img img-fluid" alt="Barcelona">
-                            </div>
-                            <div class="mt-auto">
-                                <a href="A05/index.html" class="btn-custom">View Project</a>
+                    <div class="card h-100 minecraft-border">
+                        <div class="card-body project-card-body">
+                            <img src="img/chest2.png" alt="Chest" class="project-chest" />
+                            <div class="project-info">
+                                <h5 class="card-title">Activity 4</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Tecno Camon
+                                </h6>
+                                <a href="A04/index.html" class="mc-button">View Project</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-3 h-100">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Activity 6</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">BINI's Gallery</h6>
-                            <div class="card my-1">
-                                <img src="A06/img/BINI Gal.jpg" class="card-img img-fluid" alt="BINI Gallery">
-                            </div>
-                            <div class="mt-auto">
-                                <a href="A06/index.html" class="btn-custom">View Project</a>
+                    <div class="card h-100 minecraft-border">
+                        <div class="card-body project-card-body">
+                            <img src="img/chest2.png" alt="Chest" class="project-chest" />
+                            <div class="project-info">
+                                <h5 class="card-title">Activity 5</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Barcelona - Spain</h6>
+                                <a href="A05/index.html" class="mc-button">View Project</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-3 h-100">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Activity 7</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Digimon API</h6>
-                            <div class="card my-1">
-                                <img src="img/Digimon.png" class="card-img img-fluid" alt="Project Image">
-                            </div>
-                            <div class="mt-auto">
-                                <a href="A07/index.html" class="btn-custom">View Project</a>
+                    <div class="card h-100 minecraft-border">
+                        <div class="card-body project-card-body">
+                            <img src="img/chest2.png" alt="Chest" class="project-chest" />
+                            <div class="project-info">
+                                <h5 class="card-title">Activity 6</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">BINI's Gallery</h6>
+                                <a href="A06/index.html" class="mc-button">View Project</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-3 h-100">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Activity 8</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-                            <div class="card my-1">
-                                <img src=" " class="card-img img-fluid" alt="Project Image">
-                            </div>
-                            <div class="mt-auto">
-                                <a href="A08/index.html" class="btn-custom btn-disabled">View Project</a>
+                    <div class="card h-100 minecraft-border">
+                        <div class="card-body project-card-body">
+                            <img src="img/chest2.png" alt="Chest" class="project-chest" />
+                            <div class="project-info">
+                                <h5 class="card-title">Activity 7</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Digimon API</h6>
+                                <a href="A07/index.html" class="mc-button">View Project</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-3 h-100">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Activity 9</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-                            <div class="card my-1">
-                                <img src=" " class="card-img img-fluid" alt="Project Image">
+                    <div class="card h-100 minecraft-border">
+                        <div class="card-body project-card-body">
+                            <img src="img/chest2.png" alt="Chest" class="project-chest" />
+                            <div class="project-info">
+                                <h5 class="card-title">Activity 8</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Street Fighter</h6>
+                                <a href="A08/banner.html" class="mc-button">View Project</a>
                             </div>
-                            <div class="mt-auto">
-                                <a href="A09/index.html" class="btn-custom btn-disabled">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-3 h-100">
+                    <div class="card h-100 minecraft-border">
+                        <div class="card-body project-card-body">
+                            <img src="img/chest2.png" alt="Chest" class="project-chest" />
+                            <div class="project-info">
+                                <h5 class="card-title">Activity 9</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+                                <a href="A09/index.html" class="mc-button btn-disabled" tabindex="-1"
+                                    aria-disabled="true">View Project</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-                crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("viewProjectsBtn").addEventListener("click", function () {
+            const projectsContainer = document.getElementById("projectsContainer");
+            if (projectsContainer.style.display != "block") {
+                projectsContainer.style.display = "block";
+                this.textContent = "Hide Projects";
+            } else {
+                projectsContainer.style.display = "none";
+                this.textContent = "View Projects";
+            }
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
